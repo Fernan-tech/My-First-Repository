@@ -1,0 +1,53 @@
+---
+title: "Romero_Activity1"
+author: "Fernando Romero"
+date: "9/24/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Main Research Interest
+***
+I am interested in _**Data Science Applied to Transport Sector**_, _**Intelligent Transportation Systems**_, _**Urbanism**_ and _**Travel Behavior**_. Recent work includes studies on the impact of real-time information on route choice and how measures aimed at tackling high pollution episodes change commuter's behavior. Currently, I try to find out which transport demand management measures would foster a more sustainable mobility in a case study in Madrid. These measures include incentives for carpooling, improvements in bus travel time, or removing transfers at subway network.  
+   
+# Favorites
+***
+## Favorite Music
+1. Io Vivrò Senza Te - Mina 
+2. La Casa Azul - Marco Mengoni
+3. Un Hombre De Verdad - Alaska  
+4. I Was Born To Love You - Queen  
+5. Mourir Sur Scène - Dalida
+
+## Favorite Equation
+Multinomial logit choice   
+
+$P_{ni}=\frac{exp(B_{i}s_{n})}{\sum_{j=1}^J exp(B_{j}s_{n})}$
+
+## Favorite Artists
+Name | Achievements
+:-|:-
+Alfred Hitchcock | The Master of Suspense. He directed over **50 films**, the most famous are *Vertigo*, *North by Northwest* and *Psycho*.
+Bette Davis | **Two** Academy Awards for Best Actress.She was the first person to garner **ten** acting Academy Award nominations.
+Freddie Mercury | One of the most charismatic singers and songwriters of the 20th Century.
+Mina | Italian singer who has scored **79 albums and 71 singles** on the Italian charts.
+Tom Ford | In addition to be one of the most recognized fashion desginers, Tom Ford has directed two films (*A Single Man*, *Nocturnal Animals*) full of emotions and beauty that were acclaimed by film critics and at film festivals.
+
+# A Chunk Of Code
+***
+Temperature in Summer 2016.  
+We show the distribution of temperatures in Summer 2016, in Madrid based on daily records.
+```{r echo=FALSE, warnings=FALSE, message=FALSE}
+library("lubridate")
+library("ggplot2")
+library("tidyverse")
+Date<-seq(ymd("2016-06-01",tz="Europe/Madrid"), ymd("2016-09-30",tz="Europe/Madrid"), by="day")
+Temperature<-rnorm(length(Date),mean=35,sd=3)
+Summer_Temp<-data.frame(Date,Temperature)
+Summer_Temp %>% group_by(Month=month(Date)) %>% summarise(Average_Temperature=mean(Temperature),Deviation_Temperature=sd(Temperature))
+ggplot(Summer_Temp,aes(x=Date,y=Temperature,color=Temperature))+geom_line()+geom_point()+scale_color_gradient(low="yellow",high="red")+labs(y="Temperature °C",title="Temperature in Summer 2016")
+
+```
