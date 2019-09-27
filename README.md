@@ -7,9 +7,9 @@ I've created this repository as an exercise for the graduate seminar.
 
 After creating the repository, I dowload **GitHub Desktop**. This enables me to have a local version of the project in my computer, including all the files. To that end, I cloned the repository I had created previously.
 
-## Second step: sync with remote repository
+## Second step: synchronize with remote repository
 
-Now, I can make changes in my local version. However, I don't create a new version until commit these changes and push the repository. It is a way of synchronizing my repository remotely.
+Now, I can make changes in my local version. However, I don't create a new version until committing these changes and **pushing** the repository. It is a way of synchronizing my repository remotely. I also can work on GitHub online and when I finish the activity, I **pull** the repository from GitHub Desktop to synchronize the local version.
 
 # Introduction
 ***
